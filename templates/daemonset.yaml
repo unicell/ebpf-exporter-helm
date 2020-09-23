@@ -26,6 +26,9 @@ spec:
       - name: {{ .Release.Name  }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        command:
+        - "/root/go/bin/ebpf_exporter"
+        - "--config.file=/etc/config/ebpf-config.yaml"
         securityContext:
           privileged: true
         ports:
@@ -39,6 +42,8 @@ spec:
           name: kernel
         - mountPath: /lib/modules/
           name: modules
+        - mountPath: /usr/src/
+          name: src
         resources:
           {{- toYaml .Values.resources | nindent 10 }}
       dnsPolicy: ClusterFirst
@@ -57,3 +62,7 @@ spec:
             path: /lib/modules/
             type: Directory
           name: modules
+        - hostPath:
+            path: /usr/src/
+            type: Directory
+          name: src
