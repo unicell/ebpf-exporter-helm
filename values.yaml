@@ -1,10 +1,10 @@
-# Default values for ebpf-exporter.
+# Default values for ebpf_exporter.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 image:
-  repository: vanneback/ebpf-exporter
-  tag: ubuntu
+  repository: unicell/ebpf_exporter
+  tag: v0.1.0
   pullPolicy: IfNotPresent
 
 nameOverride: ""
@@ -48,7 +48,7 @@ resources: {}
 
 configMapFile: {}
 # specify file to overwrite the default one.
-# See templates/ebpf-exporter-conf.yaml or https://github.com/cloudflare/ebpf_exporter for 
+# See templates/ebpf-exporter-conf.yaml or https://github.com/cloudflare/ebpf_exporter for
 # Info on how to write the file.
 
 podAnnotations: {}

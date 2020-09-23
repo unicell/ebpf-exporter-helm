@@ -1,4 +1,5 @@
-# eBPF\_exporter
+# ebpf_exporter
+
 A prometheus exporter for custom eBPF metrics.
 
 eBPF is an enchanment to BPF (Berkeley Packet Filter) and allow custom analysis
@@ -10,7 +11,7 @@ and export it into prometheus.
 ## TL;DR;
 
 1. Download repo
-2. `helm install -n ebpf-exporter .`
+2. `helm install -n ebpf_exporter .`
 
 ## Links
 
@@ -22,7 +23,7 @@ and export it into prometheus.
 Since the bcc dependencies in the image are built for ubuntu the cluster will
 most likely only run on cluster running ubuntu.
 
-The tested OS is `Ubuntu 18.04 LTS, bionic` 
+The tested OS is `Ubuntu 18.04 LTS, bionic`
 
 ## Configuration
 
@@ -49,5 +50,6 @@ Parameter | Description | Default
 `affinity` | pod affinity rules | `{}`
 
 ## Docker file
+
 The docker file to build images can be located at
-<https://github.com/vanneback/ebpf_exporter_dockerfile>
+<https://github.com/unicell/ebpf_exporter>
